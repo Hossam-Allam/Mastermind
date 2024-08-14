@@ -3,8 +3,7 @@ class Mastermind
   attr_accessor :code
 
   def initialize
-    @code = [1, 2, 3, 4]
-    # @code = (0...4).map { rand(1..6) }
+    @code = (0...4).map { rand(1..6) }
   end
 
   def good_guess?(guess)
@@ -34,7 +33,7 @@ class Mastermind
   def partially_correct?(guess)
     copy_code = @code.dup
     partial = 0
-    @code.each_with_index do |val, index|
+    @code.each_with_index do |_val, index|
       copy_code[index] = nil if @code[index] == guess[index]
     end
 
