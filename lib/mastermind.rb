@@ -3,8 +3,7 @@ class Mastermind
   attr_accessor :code
 
   def initialize
-    # @code = (0...4).map { rand(1..6) }
-    @code = [1, 2, 3, 4]
+    @code = (0...4).map { rand(1..6) }
   end
 
   def good_guess?(guess)

@@ -6,6 +6,15 @@ puts "The goal of the game is to guess a secret code in less than 12 tries"
 
 mastermind = Mastermind.new
 
-guess = gets.chomp
+x = 0
+while x < 12
+  guess = gets.chomp
 
-puts mastermind.good_guess?(guess)
+  if mastermind.good_guess?(guess) == true
+    puts "Congratulations! You've guessed the correct code.".colorize(:green)
+    break
+  else
+    puts mastermind.good_guess?(guess).colorize(:blue)
+  end
+  x += 1
+end
