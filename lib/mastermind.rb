@@ -2,8 +2,12 @@
 class Mastermind
   attr_accessor :code
 
-  def initialize
-    @code = (0...4).map { rand(1..6) }
+  def initialize(code = nil)
+    @code = if code.nil?
+              (0...4).map { rand(1..6) }
+            else
+              code.chars.map!(&:to_i)
+            end
   end
 
   def good_guess?(guess)
