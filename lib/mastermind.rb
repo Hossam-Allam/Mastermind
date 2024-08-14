@@ -10,13 +10,11 @@ class Mastermind
   def good_guess?(guess)
     guess_arr = guess.chars.map(&:to_i) # Convert string to an array of integers
 
-    if winner?(guess_arr)
-      "Congratulations! You've guessed the correct code."
-    else
-      correct = correct?(guess_arr)
-      partial = partially_correct?(guess_arr)
-      "You have #{correct} digits in the correct position and #{partial} correct digits in the wrong position."
-    end
+    return true if winner?(guess_arr)
+
+    correct = correct?(guess_arr)
+    partial = partially_correct?(guess_arr)
+    "You have #{correct} digits in the correct position and #{partial} correct digits in the wrong position."
   end
 
   private
