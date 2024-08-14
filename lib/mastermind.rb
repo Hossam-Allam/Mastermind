@@ -1,4 +1,4 @@
-# Class responsible for code generation
+# Class responsible for the code generation as well as checks
 class Mastermind
   attr_accessor :code
 
