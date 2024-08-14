@@ -15,7 +15,8 @@ while x < 12
     puts "Congratulations! You've guessed the correct code.".colorize(:green)
     break
   else
-    puts mastermind.good_guess?(guess).colorize(:blue)
+    info = mastermind.good_guess?(guess)
+    puts "You have #{info[0]} digits in the correct position and #{info[1]} correct digits in the wrong position.".colorize(:blue) # rubocop:disable Layout/LineLength
   end
   x += 1
 end

@@ -14,7 +14,7 @@ class Mastermind
 
     correct = correct?(guess_arr)
     partial = partially_correct?(guess_arr)
-    "You have #{correct} digits in the correct position and #{partial} correct digits in the wrong position."
+    [correct, partial]
   end
 
   private
