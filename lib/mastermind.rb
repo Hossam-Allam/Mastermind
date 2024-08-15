@@ -38,7 +38,10 @@ class Mastermind
     copy_code = @code.dup
     partial = 0
     @code.each_with_index do |_val, index|
-      copy_code[index] = nil if @code[index] == guess[index]
+      if @code[index] == guess[index]
+        copy_code[index] = nil
+        guess[index] = 9 # So that correct numbers in correct positions arent checked against other numbers
+      end
     end
 
     guess.each { |val| partial += 1 if copy_code.include?(val) }
